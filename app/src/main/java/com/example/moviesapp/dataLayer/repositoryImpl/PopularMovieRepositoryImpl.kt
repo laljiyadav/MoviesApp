@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class PopularMovieRepositoryImpl @Inject constructor(private val popularMovieDataSource: PopularMovieDataSource) : PopularMovieRepository {
 
-    override suspend fun getPopularMovieList() {
-      popularMovieDataSource.getPopularMovieList()
+    override suspend fun getPopularMovieList():PopularMovieListModel {
+      return popularMovieDataSource.getPopularMovieList()
     }
 }

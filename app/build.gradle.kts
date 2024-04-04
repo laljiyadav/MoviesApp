@@ -58,6 +58,12 @@ dependencies {
     kapt ("androidx.hilt:hilt-compiler:1.1.0")
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)
+
+    // Image Handling
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation ("com.makeramen:roundedimageview:2.3.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

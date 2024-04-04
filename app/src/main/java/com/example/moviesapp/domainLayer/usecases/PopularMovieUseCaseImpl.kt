@@ -16,7 +16,7 @@ class PopularMovieUseCaseImpl @Inject constructor (private val popularMovieRepos
         try {
 
             emit(Resource.Loading())
-            var res= popularMovieRepository.getPopularMovieList() as PopularMovieListModel
+            var res= popularMovieRepository.getPopularMovieList()
             val resData: PopularMovieListModel? = if(res!=null) res else null
             emit(Resource.Success(data = resData!!))
 

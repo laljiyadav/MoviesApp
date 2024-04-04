@@ -1,5 +1,6 @@
 package com.example.moviesapp.presentation.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.moviesapp.assets.Resource
@@ -14,12 +15,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PopularMovieViewModel @Inject constructor(private val popularMovieRepositoryUseCase: PopularMovieUseCase):ViewModel() {
-
+    private val TAG = "PopularMovieViewModel"
     private val mutableStateFlowCart= MutableStateFlow<PopularMovieViewState>(PopularMovieViewState())
     val stateFlowCart: StateFlow<PopularMovieViewState> =mutableStateFlowCart
 
     fun getPopularMovie(){
         popularMovieRepositoryUseCase.invoke().onEach {
+            Log.i(TAG, "getPopularMovie: "+it.message)
             when(it)
             {
                 is Resource.Loading->{

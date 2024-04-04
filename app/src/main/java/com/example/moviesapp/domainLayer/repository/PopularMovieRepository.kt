@@ -4,6 +4,6 @@ import com.example.moviesapp.dataLayer.models.PopularMovieListModel
 
 interface PopularMovieRepository {
 
-    suspend fun getPopularMovieList()
+    suspend fun getPopularMovieList():PopularMovieListModel
 
 }
