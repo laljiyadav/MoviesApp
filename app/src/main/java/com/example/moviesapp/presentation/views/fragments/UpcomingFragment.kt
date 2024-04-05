@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.atiyakeithel.presentation.applayer.views.adapters.UpcomingMovieAdapter
 import com.example.moviesapp.R
+import com.example.moviesapp.assets.isOnline
 import com.example.moviesapp.databinding.FragmentUpcomingBinding
 import com.example.moviesapp.presentation.views.activities.MainActivity
 import com.example.moviesapp.presentation.viewmodels.UpcomingMovieViewModel
@@ -37,7 +38,6 @@ class UpcomingFragment : Fragment() {
     private lateinit var binding: FragmentUpcomingBinding
     private val viewModel:UpcomingMovieViewModel by viewModels()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -48,7 +48,6 @@ class UpcomingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_upcoming, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -58,20 +57,23 @@ class UpcomingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val homeActivity = activity as MainActivity
+        loadData();
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getUpcomingMovieList()
             viewModel.stateFlow.collect{
                 if (it.isLoading) {
+
                     homeActivity.showProgressBar()
                 } else if (it.error.isNotBlank()) {
                     Log.i(TAG, "onViewCreated: "+it.error)
+                    binding.swiperefresh.isRefreshing=false
                     Toast.makeText(context, it.error, Toast.LENGTH_LONG).show()
                 } else {
                     it.data?.let {
+                        binding.swiperefresh.isRefreshing=false
                         homeActivity.hideProgressBar()
                         Log.i(TAG, "onViewCreated: " + it)
-
                         val layoutManager = GridLayoutManager(
                             requireActivity(),
                             2,
@@ -85,8 +87,21 @@ class UpcomingFragment : Fragment() {
                 }
             }
         }
+
+        binding.swiperefresh.setOnRefreshListener {
+            loadData()
+        }
     }
 
+    fun loadData()
+    {
+        if (isOnline(requireContext())){
+            binding.swiperefresh.isRefreshing=true
+            viewModel.getUpcomingMovieList()
+        }else{
+            Toast.makeText(context, getString(R.string.check_you_internet_connection), Toast.LENGTH_LONG).show()
+        }
+    }
 
     companion object {
         @JvmStatic

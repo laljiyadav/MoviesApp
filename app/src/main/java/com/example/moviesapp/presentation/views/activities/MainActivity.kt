@@ -41,7 +41,7 @@ class MainActivity : BaseActivity() {
             {
                 tab.text = "Popular Movies"
             }else{
-                tab.text = "Latest Movies"
+                tab.text = "Upcoming Movies"
             }
 
         }.attach()

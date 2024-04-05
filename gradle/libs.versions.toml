@@ -17,6 +17,7 @@ sdpandroid="1.1.0"
 sspandroid="1.1.0"
 androidlib="8.2.2"
 networkclient="1.0"
+swiperefresh="1.2.0-alpha01"
 
 
 [libraries]
@@ -34,6 +35,7 @@ hilt-android = { group ="com.google.dagger", name ="hilt-android", version.ref="
 sdp-android = { group ="com.intuit.sdp", name ="sdp-android", version.ref="sdpandroid"}
 ssp-android = { group ="com.intuit.ssp", name ="ssp-android", version.ref="sspandroid"}
 networkClient= { group ="com.github.laljiyadav", name ="NetworkClient", version.ref="networkclient"}
+swiperefreshlayout = { group ="androidx.swiperefreshlayout", name ="swiperefreshlayout",version.ref="swiperefresh"}
 
 
 [plugins]

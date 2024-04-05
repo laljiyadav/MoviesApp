@@ -58,6 +58,7 @@ dependencies {
     kapt ("androidx.hilt:hilt-compiler:1.1.0")
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)
+    implementation(libs.swiperefreshlayout)
 
     // Image Handling
     implementation ("de.hdodenhof:circleimageview:3.1.0")

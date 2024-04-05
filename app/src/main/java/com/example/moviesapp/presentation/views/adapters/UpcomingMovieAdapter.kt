@@ -33,15 +33,12 @@ class UpcomingMovieAdapter (private val context: Context, private val items: Lis
         holder.txtDate.setText(item!!.release_date)
         Glide.with(holder.itemView.context).load(IMAGE_BASE_URL.plus(item!!.poster_path)).error(R.drawable.ic_launcher_background).into(holder.img)
         holder.itemView.setOnClickListener {
-
             context.startActivity(Intent(context, MovieDetailsActivity::class.java).putExtra("id",item.id))
         }
     }
-
     inner class ViewHolder(items: View): RecyclerView.ViewHolder(items){
         val txtProductName: TextView = items.findViewById(R.id.txtMovieName)
         val img: RoundedImageView =items.findViewById(R.id.img)
         val txtDate:TextView =items.findViewById(R.id.txtDate)
-
     }
 }
