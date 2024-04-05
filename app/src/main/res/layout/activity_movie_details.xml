@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.moviesapp.presentation.viewmodels.MovieDetailsViewModel" />
+    </data>
+    <RelativeLayout
+       android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.views.activities.MovieDetailsActivity">
+        <include layout="@layout/toolbar"/>
+        <include layout="@layout/progress_bar_layout"/>
+        <androidx.core.widget.NestedScrollView
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="5dp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:layout_marginLeft="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="13dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/img"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_210sdp"
+                            android:src="@drawable/ic_launcher_background"
+                            app:riv_corner_radius_top_right="@dimen/_10sdp"
+                            app:riv_corner_radius_top_left="@dimen/_10sdp"
+                            android:scaleType="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/txtMovieName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Tata Tea Premium"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_16ssp" />
+                        <TextView
+                            android:id="@+id/txtDate"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray"
+                            android:text="5 ml"
+                            android:layout_gravity="start"
+                            android:textSize="@dimen/_13ssp"
+                            android:fontFamily="@font/roboto"
+                            />
+                        <TextView
+                            android:id="@+id/txtOverview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Overview"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <TextView
+                            android:id="@+id/txtContentOverview"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray"
+                            android:text="5 ml"
+                            android:layout_gravity="start"
+                            android:textSize="@dimen/_13ssp"
+                            android:fontFamily="@font/roboto"
+                            />
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>
+

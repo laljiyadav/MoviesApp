@@ -15,10 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.atiyakeithel.presentation.applayer.views.adapters.PopularMovieAdapter
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.FragmentPopularBinding
-import com.example.moviesapp.presentation.MainActivity
+import com.example.moviesapp.presentation.views.activities.MainActivity
 import com.example.moviesapp.presentation.viewmodels.PopularMovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint

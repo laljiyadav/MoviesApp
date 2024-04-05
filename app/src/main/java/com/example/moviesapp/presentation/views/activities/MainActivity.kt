@@ -1,4 +1,4 @@
-package com.example.moviesapp.presentation
+package com.example.moviesapp.presentation.views.activities
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -45,21 +45,5 @@ class MainActivity : BaseActivity() {
             }
 
         }.attach()
-//        viewModel.getPopularMovie()
-
-//        lifecycleScope.launch {
-//            repeatOnLifecycle(Lifecycle.State.STARTED){
-//
-//                viewModel.stateFlowCart.collect{
-//                    if (it.isLoading) {
-//                        Log.i(TAG, "onCreate: it.isLoading ")
-//                    } else if (it.error.isNotBlank()) {
-//                        Log.i(TAG, "onCreate: it.error.isNotBlank() ")
-//                    } else {
-//                        Log.i(TAG, "onCreate: "+it.data!!.page)
-//                    }
-//                }
-//            }
-//        }
     }
 }

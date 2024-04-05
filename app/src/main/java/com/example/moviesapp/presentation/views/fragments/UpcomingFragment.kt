@@ -12,11 +12,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.atiyakeithel.presentation.applayer.views.adapters.PopularMovieAdapter
 import com.atiyakeithel.presentation.applayer.views.adapters.UpcomingMovieAdapter
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.FragmentUpcomingBinding
-import com.example.moviesapp.presentation.MainActivity
+import com.example.moviesapp.presentation.views.activities.MainActivity
 import com.example.moviesapp.presentation.viewmodels.UpcomingMovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
