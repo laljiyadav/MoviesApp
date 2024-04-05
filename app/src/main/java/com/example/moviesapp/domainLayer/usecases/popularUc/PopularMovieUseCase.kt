@@ -1,7 +1,7 @@
-package com.example.moviesapp.domainLayer.usecases
+package com.example.moviesapp.domainLayer.usecases.popularUc
 
 import com.example.moviesapp.assets.Resource
-import com.example.moviesapp.dataLayer.models.PopularMovieListModel
+import com.example.moviesapp.dataLayer.models.popular.PopularMovieListModel
 import kotlinx.coroutines.flow.Flow
 
 interface PopularMovieUseCase {

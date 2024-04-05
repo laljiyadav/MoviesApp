@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.moviesapp.R
 import com.example.moviesapp.assets.IMAGE_BASE_URL
-import com.example.moviesapp.dataLayer.models.popular.Result
+import com.example.moviesapp.dataLayer.models.upcoming.Result
 import com.makeramen.roundedimageview.RoundedImageView
 
 
-class PopularMovieAdapter (private val context: Context, private val items: List<Result>?):RecyclerView.Adapter<PopularMovieAdapter.ViewHolder>() {
+class UpcomingMovieAdapter (private val context: Context, private val items: List<Result>?):RecyclerView.Adapter<UpcomingMovieAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

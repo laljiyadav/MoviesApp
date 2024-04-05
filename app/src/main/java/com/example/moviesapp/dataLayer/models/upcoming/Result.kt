@@ -1,7 +1,4 @@
-package com.example.moviesapp.dataLayer.models
-
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+package com.example.moviesapp.dataLayer.models.upcoming
 
 data class Result(
     val adult: Boolean,

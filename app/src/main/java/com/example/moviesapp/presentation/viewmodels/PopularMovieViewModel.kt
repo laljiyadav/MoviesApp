@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.moviesapp.assets.Resource
-import com.example.moviesapp.domainLayer.usecases.PopularMovieUseCase
+import com.example.moviesapp.domainLayer.usecases.popularUc.PopularMovieUseCase
 import com.example.moviesapp.presentation.viewstate.PopularMovieViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class PopularMovieViewModel @Inject constructor(private val popularMovieRepositoryUseCase: PopularMovieUseCase):ViewModel() {
     private val TAG = "PopularMovieViewModel"
-    private val mutableStateFlowCart= MutableStateFlow<PopularMovieViewState>(PopularMovieViewState())
+    private val mutableStateFlowCart = MutableStateFlow<PopularMovieViewState>(PopularMovieViewState())
     val stateFlowCart: StateFlow<PopularMovieViewState> =mutableStateFlowCart
 
     fun getPopularMovie(){
